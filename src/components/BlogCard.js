@@ -27,7 +27,7 @@ export default function BlogCard({id ,title ,image,description,time}) {
 
       const handleDelete = async () => {
         try {
-          const { data } = await axios.delete(`/api/v1/blog/delete-blog/${id}`);
+          const { data } = await axios.delete(`https://fibalb.onrender.com/api/v1/blog/delete-blog/${id}`);
           if (data?.success) {
             alert("Blog Deleted");
             window.location.reload();

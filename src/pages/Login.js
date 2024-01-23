@@ -21,11 +21,11 @@ const Login = () => {
   const handleSubmit= async (e)=>{
     e.preventDefault()
     try {
-      const {data}=  await axios.post('/api/v1/user/login' ,{ email : inputs.email, password:inputs.password})
+      const {data}=  await axios.post('https://fibalb.onrender.com/api/v1/user/login' ,{ email : inputs.email, password:inputs.password})
       if(data.success){
         dispatch(authActions.Login());
         alert("User Login successfully");
-        navigate("/");
+        navigate("/blogs");
       }
     } catch (error) {
       console.log(error);
